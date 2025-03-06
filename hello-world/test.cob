@@ -1,6 +1,6 @@
       *Sample COBOL program                                                     
        IDENTIFICATION DIVISION.                                                 
-       PROGRAM-ID. hello-world.                                                 
+       PROGRAM-ID. HELLO-WORLD.                                                 
        DATA DIVISION.                                                           
        WORKING-STORAGE SECTION.                                                 
       * CCHECKWS.CPY                                                            
@@ -131,7 +131,7 @@
                    15  UT-FILE-STATUS-FIELD-NAME PIC X(31).                     
                                                                                 
       * CCHECKWS.CPY END                                                        
-       01 WS-RESULT PIC X(14).                                                  
+       01 WS-RESULT  PIC X(15).                                                 
        PROCEDURE DIVISION.                                                      
            PERFORM UT-INITIALIZE                                                
       *-------- "Hello World"                                                   
@@ -434,7 +434,6 @@
        UT-END.                                                                  
                                                                                 
       * CCHECKPARAGRAPHSPD.CPY END                                              
-        MOVE "HELLO-WORLD" TO WS-RESULT.                                        
-        DISPLAY WS-RESULT.                                                      
-                                                                                
-                                                                                
+       HELLO-WORLD SECTION.                                                     
+           MOVE "Hello, World! " TO WS-RESULT.                                  
+           DISPLAY WS-RESULT.                                                   
