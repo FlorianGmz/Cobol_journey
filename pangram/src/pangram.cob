@@ -3,7 +3,15 @@
         ENVIRONMENT DIVISION.
         DATA DIVISION.
         WORKING-STORAGE SECTION.
-        01 WS-SENTENCE PIC X(60).
-        01 WS-RESULT PIC 9.
+       01 WS-SENTENCE  PIC X(60).
+       01 WS-ALPHABET  PIC X(26) VALUE 'abcdefghijklmnopqrstuvwxyz'.
+       01 WS-COUNT     PIC 9(2)  VALUE 0.
+       01 WS-RESULT    PIC 9     VALUE 0.
         PROCEDURE DIVISION.
-        PANGRAM.
+       PANGRAM SECTION.
+           INSPECT WS-SENTENCE TALLYING WS-COUNT FOR ALL
+              WS-ALPHABET.
+           IF WS-COUNT = 26
+              MOVE 1 TO WS-RESULT
+           END-IF.
+           STOP RUN.
